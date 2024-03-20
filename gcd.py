@@ -5,5 +5,3 @@ def gcd(r2, r1):
 
 print(gcd(66528, 52920))
 
-#dasd
-
