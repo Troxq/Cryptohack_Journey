@@ -3,5 +3,5 @@ def gcd(r2, r1):
         return r1
     return gcd(r1, r2%r1)
 
-print(gcd(66528, 52920))
+print(gcd(22, 11))
 

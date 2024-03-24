@@ -1,12 +1,20 @@
-hex_string = "73626960647f6b206821204f21254f7d694f7624662065622127234f726927756d"
-integer = 1
-
-# XOR directly with the string
-result_string = ''.join(chr(int(c, 16) ^ integer) for c in hex_string)
-
-# Convert the string to bytes first
-hex_bytes = bytes.fromhex(hex_string)
-result_bytes = bytes([b ^ integer for b in hex_bytes])
-
-print("XOR result using string:", result_string)
-print("XOR result using bytes:", result_bytes.hex())
+def gcdExtended(a, b): 
+    # Base Case 
+    if a == 0 : 
+        return b,0,1
+             
+    gcd,x1,y1 = gcdExtended(b%a, a) 
+     
+    # Update x and y using results of recursive 
+    # call 
+    x = y1 - (b//a) * x1 
+    y = x1 
+     
+    return gcd,x,y 
+     
+ 
+# Driver code 
+a, b = 26513, 32321
+g, x, y = gcdExtended(a, b) 
+print("gcd(", a , "," , b, ") = ", g) 
+print(x, y)
