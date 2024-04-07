@@ -6,6 +6,6 @@ def Egcd(a, b):
     y = x2 - (a//b) * y2
     return x, y, gcd
 
-u, v, gcd = Egcd(26513, 32321)
+u, v, gcd = Egcd(3, 13)
 print(u, v, gcd)
 print((u * 26513) + (v * 32321))
